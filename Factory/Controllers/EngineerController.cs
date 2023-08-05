@@ -5,8 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Factory.Models;
 
-
-
 namespace Factory.Controllers
 {
     public class EngineerController : Controller

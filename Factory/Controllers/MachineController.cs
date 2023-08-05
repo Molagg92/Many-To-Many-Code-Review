@@ -12,7 +12,7 @@ namespace Factory.Controllers
        private readonly FactoryContext _db;
         public MachineController(FactoryContext db)
         {
-            _db = db;
+          _db = db;
         }
     public ActionResult Index()
         {
@@ -20,20 +20,26 @@ namespace Factory.Controllers
         return View(model);
         }
 
+        public ActionResult Create()
+        {
+        return View();
+        }
 
-        
-        // public ActionResult Create()
-        // {
-        // return View();
-        // }
-
-        // [HttpPost]
-        // public ActionResult Create(Machine machine)
-        // {
-        // _db.Machines.Add(machine);
-        // _db.SaveChanges();
-        // return RedirectToAction("Index");
-        // }
+        [HttpPost]
+        public ActionResult Create(Machine machine)
+        {
+        _db.Machines.Add(machine);
+        _db.SaveChanges();
+        return RedirectToAction("Index");
+        }
+				public ActionResult Details(int id)
+        {
+        	Machine thisMachine = _db.Machines
+                                      .Include(machine => machine.EngineerMachineEntities)
+                                      .ThenInclude(join => join.Engineer)
+                                      .FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
+        }
 
     }
 }
