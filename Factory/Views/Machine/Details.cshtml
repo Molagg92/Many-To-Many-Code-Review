@@ -8,3 +8,20 @@
 <h2>Machine Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.RequiredLicense): @Html.DisplayFor(model => model.RequiredLicense)</h3>  
+
+@if (@Model.EngineerMachineEntities.Count == 0)
+{
+  <h3> --No Engineers have been added to this machine yet-- </h3>
+} 
+else
+{
+  <h3>Engineers:</h3>
+  <ul>
+    @foreach (EngineerMachineEntity join in Model.EngineerMachineEntities)
+    {
+      <li>Engineers: @join.Engineer.Name</li>
+    }
+  </ul>
+}
+
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
