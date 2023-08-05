@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h4>Add a new machine</h4>
+
+<p><strong>NOTE:</strong> You need to have at least one category before you can add an item!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Categories") to create a category.</p>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Type)
+  @Html.TextBoxFor(model => model.Type)
+
+  @* @Html.LabelFor(model => model.Machine)
+  @Html.DropDownList("MachineId") *@
+
+  <input type="submit" value="Add new Machine" class="btn btn-default" />
+}
+<p>@Html.ActionLink("Show all machines", "Index")</p>
