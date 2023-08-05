@@ -16,7 +16,14 @@
   @Html.EditorFor(model => model.Name)
   <br>
   @Html.LabelFor(model => model.MachineLicense)
-  @Html.EditorFor(model => model.MachineLicense)
+    @Html.DropDownListFor(model => model.MachineLicense,
+    new SelectList(new[]
+    {
+      new SelectListItem { Text = "Type A", Value = "Type A" },
+      new SelectListItem { Text = "Type B", Value = "Type B" },
+      new SelectListItem { Text = "Type C", Value = "Type C" }
+    }, "Value", "Text", Model.MachineLicense))  // Add this line to create the dropdown list
+  <br>
 
   <input type="submit" value="Save" />
 }

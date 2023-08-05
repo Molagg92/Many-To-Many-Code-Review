@@ -13,13 +13,18 @@
 {
   @Html.LabelFor(model => model.Type)
   @Html.TextBoxFor(model => model.Type)
-
+  <br>
   @Html.LabelFor(model => model.RequiredLicense)
-  @Html.TextBoxFor(model => model.RequiredLicense)
+  @Html.DropDownListFor(model => model.RequiredLicense, new List<SelectListItem>
+    {
+        new SelectListItem { Text = "Type A", Value = "Type A" },
+        new SelectListItem { Text = "Type B", Value = "Type B" },
+        new SelectListItem { Text = "Type C", Value = "Type C" }
+    })
 
   @* @Html.LabelFor(model => model.Machine)
   @Html.DropDownList("MachineId") *@
-
-  <input type="submit" value="Add new Machine" class="btn btn-default" />
+  <br>
+  <input type="submit" value="Add new Machine"/>
 }
 <p>@Html.ActionLink("Show all machines", "Index")</p>

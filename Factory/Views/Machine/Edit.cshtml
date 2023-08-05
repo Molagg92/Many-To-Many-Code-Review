@@ -1,0 +1,30 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h2>Edit</h2>
+
+<h4>Edit this machine: @Html.DisplayFor(model => model.Type)</h4>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.MachineId)
+
+  @Html.LabelFor(model => model.Type)
+  @Html.EditorFor(model => model.Type)
+  <br>
+  @Html.LabelFor(model => model.RequiredLicense)
+    @Html.DropDownListFor(model => model.RequiredLicense,
+    new SelectList(new[]
+    {
+      new SelectListItem { Text = "Type A", Value = "Type A" },
+      new SelectListItem { Text = "Type B", Value = "Type B" },
+      new SelectListItem { Text = "Type C", Value = "Type C" }
+    }, "Value", "Text", Model.RequiredLicense))  // Add this line to create the dropdown list
+  <br>
+
+  <input type="submit" value="Save" />
+}
+<p>@Html.ActionLink("Back to list", "Index")</p>

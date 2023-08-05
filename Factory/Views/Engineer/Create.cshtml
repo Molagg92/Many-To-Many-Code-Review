@@ -13,13 +13,15 @@
 {
   @Html.LabelFor(model => model.Name)
   @Html.TextBoxFor(model => model.Name)
-
-    @Html.LabelFor(model => model.MachineLicense)
-  @Html.TextBoxFor(model => model.MachineLicense)
-
-  @* @Html.LabelFor(model => model.Machine)
-  @Html.DropDownList("MachineId") *@
-
-  <input type="submit" value="Add new Engineer" class="btn btn-default" />
+  <br>
+   @Html.LabelFor(model => model.MachineLicense)
+    @Html.DropDownListFor(model => model.MachineLicense, new List<SelectListItem>
+    {
+        new SelectListItem { Text = "Type A", Value = "Type A" },
+        new SelectListItem { Text = "Type B", Value = "Type B" },
+        new SelectListItem { Text = "Type C", Value = "Type C" }
+    })
+  <br>
+  <input type="submit" value="Add new Engineer" />
 }
 <p>@Html.ActionLink("Show all engineers", "Index")</p>
