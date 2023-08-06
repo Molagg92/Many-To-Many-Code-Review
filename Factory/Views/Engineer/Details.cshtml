@@ -15,11 +15,27 @@
 } 
 else
 {
-  <h3>Machines:</h3>
+  @* <h3>Machines:</h3>
   <ul>
     @foreach (EngineerMachineEntity join in Model.EngineerMachineEntities)
     {
       <li>@join.Machine.Type - @join.Machine.RequiredLicense</li>
+    }
+  </ul> *@
+
+
+// not working below
+  
+  <h4>Machines:</h4>
+  <ul>
+    @foreach(EngineerMachineEntity join in Model.EngineerMachineEntities)
+    {
+      <li>Machine: @join.Machine.Type - @join.Machine.RequiredLicense</li>
+      @using (Html.BeginForm("DeleteJoin", "Engineer"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineEntityId)
+        <input type="submit" value="Delete"/>
+      }
     }
   </ul>
 }

@@ -15,16 +15,29 @@
 } 
 else
 {
-  <h3>Engineers:</h3>
+  @* <h3>Engineers:</h3>
   <ul>
     @foreach (EngineerMachineEntity join in Model.EngineerMachineEntities)
     {
       <li>@join.Engineer.Name - @join.Engineer.MachineLicense</li>
     }
+  </ul> *@
+
+  <h4>This item has the following tags:</h4>
+  <ul>
+    @foreach(EngineerMachineEntity join in Model.EngineerMachineEntities)
+    {
+      <li>Egineer: @join.Engineer.Name</li>
+      @using (Html.BeginForm("DeleteJoin", "Machine"))
+      {
+        @Html.Hidden("joinId", @join.EngineerMachineEntityId)
+        <input type="submit" value="Delete"/>
+      }
+    }
   </ul>
 }
 
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
+<p>@Html.ActionLink("Add an Engineer", "AddEngineer", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Edit engineer or machine", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
-<p>@Html.ActionLink("Add an Engineer", "AddEngineer", new { id = Model.MachineId })</p>
