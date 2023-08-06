@@ -1,8 +1,8 @@
-# _Many_To_Many_Code_Review.Solution_
+# _Dr. Sillystringz's Factory App_
 
-#### _Application to "insert generic description here"_
+#### _Application to Keep track of your factory machines and engineers!_
 
-#### By **YOUR NAME HERE**
+#### By Erik Z./Molag92
 
 ## Technologies Used
 
@@ -17,7 +17,7 @@
 
 ![Alt text](image.png)
 
-_This application uses MVC structure, RESTFul routing convention, and HTTP methods to track user inputted information blah blah blah blah you better change this_
+_This small application uses MVC setup with a many to many relationship between engineers and factory machines. this app offers Full CRUD and functional migration services_
 
 ## Setup/Installation Requirements
 
@@ -25,6 +25,12 @@ _This application uses MVC structure, RESTFul routing convention, and HTTP metho
 * _Navigate to "Many_To_Many_Code_Review.Solution" directory via your local terminal command line_
 * _Navigate to the production directory "Many_To_Many_Code_Review"_
 * _Navigate to the Many_To_Many_Code_Review folder in your terminal_
+* _Then inside the project folder "Factory", build a appsettings.json file, {
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=localhost;Port=3306;database=[!!PROJECTNAME!!];uid=root;pwd=[!Yourpassword!];"
+    }
+  } _
+* _Please then add appsettings.json to your gitignore file. at this point, throw out a git init, git add .gitignore, and a git commit -m "initial commit"_
 * _Then type ***dotnet build*** in your terminal to make sure everything is up to date and there are no errors_
 * _Then launch the webpage by typing ***dotnet watch run --launch-profile "production"*** in the teminal_
 * _For issuing and trusting a security certificate, type ***dotnet dev-certs https --trust*** in the terminal and restart your browser_
@@ -33,13 +39,13 @@ _This application uses MVC structure, RESTFul routing convention, and HTTP metho
 
 ## Known Bugs
 
-* _No known bugs as of 00/00/23_
+* _No known bugs as of 8/05/23_
 
 ## License
 
 MIT License
 
-Copyright (c) [2023] [Your Name Here]
+Copyright (c) [2023] Erik Z.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -59,4 +65,4 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-_If you run into any issues or have questions, ideas or concerns, please reach out to me via email: YOUR EMAIL HERE.  Contributions to the code are highly encouraged._
+_If you run into any issues or have questions, ideas or concerns, please reach out to me via email: Molagg92@gmail.com.  Contributions to the code are highly encouraged._

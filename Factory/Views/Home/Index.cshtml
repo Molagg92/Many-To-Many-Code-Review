@@ -16,13 +16,13 @@
 <ul>
   @foreach (Engineer eng in Model["engineers"])
   {
-    <li>@Html.ActionLink(@eng.Name, "Details", "Engineers", new { id = @eng.EngineerId})</li>
+    <li>@Html.ActionLink(@eng.Name, "Details", "Engineer", new { id = @eng.EngineerId})</li>
   }
 </ul>
 
 <hr>
 
-<h4>machines</h4>
+<h4>Machines</h4>
 @if (Model["machines"].Length == 0)
 {
   <p>No machines have been added yet!</p>
@@ -30,7 +30,7 @@
 <ul>
   @foreach (Machine machine in Model["machines"])
   {
-    <li>@Html.ActionLink(@machine.Type, "Details", "Machines", new { id = @machine.MachineId})</li>
+    <li>@Html.ActionLink(@machine.Type, "Details", "Machine", new { id = @machine.MachineId})</li>
   }
 </ul>
 
