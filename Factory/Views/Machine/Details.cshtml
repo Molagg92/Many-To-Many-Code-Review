@@ -7,7 +7,7 @@
 
 <h2>Machine Details</h2>
 <hr />
-<h3>@Html.DisplayNameFor(model => model.RequiredLicense): @Html.DisplayFor(model => model.RequiredLicense)</h3>  
+<h3>@Html.DisplayFor(model => model.Type): @Html.DisplayFor(model => model.RequiredLicense)</h3>  
 
 @if (@Model.EngineerMachineEntities.Count == 0)
 {
@@ -19,7 +19,7 @@ else
   <ul>
     @foreach (EngineerMachineEntity join in Model.EngineerMachineEntities)
     {
-      <li>Engineers: @join.Engineer.Name</li>
+      <li>@join.Engineer.Name - @join.Engineer.MachineLicense</li>
     }
   </ul>
 }
@@ -27,3 +27,4 @@ else
 <p>@Html.ActionLink("Home", "Index", "Home")</p>
 <p>@Html.ActionLink("Edit engineer or machine", "Edit", new { id = Model.MachineId })</p>
 <p>@Html.ActionLink("Delete Machine", "Delete", new { id = Model.MachineId })</p>
+<p>@Html.ActionLink("Add an Engineer", "AddEngineer", new { id = Model.MachineId })</p>

@@ -16,7 +16,7 @@ else
   <ul>
     @foreach (Engineer engineer in Model)
     {
-      <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId }) | @engineer.Name</li>
+      <li>@Html.ActionLink($"{engineer.Name}", "Details", new { id = engineer.EngineerId }) ID# @engineer.EngineerId</li>
     }
   </ul>
 }
