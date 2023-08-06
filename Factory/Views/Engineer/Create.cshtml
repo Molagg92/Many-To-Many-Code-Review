@@ -6,8 +6,8 @@
 
 <h4>Add a new engineer</h4>
 
-<p><strong>NOTE:</strong> You need to have at least one category before you can add an item!</p>
-<p>Go to @Html.ActionLink("this page", "Create", "Categories") to create a category.</p>
+<p>@Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger", @style = "font-weight: 600;" })</p>
+
 
 @using (Html.BeginForm())
 {
